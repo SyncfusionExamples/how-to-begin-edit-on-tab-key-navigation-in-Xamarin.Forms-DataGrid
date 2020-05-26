@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataGridDemo"
+             xmlns:sfPager="clr-namespace:Syncfusion.SfDataGrid.XForms.DataPager;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:sfGrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="DataGridDemo.MainPage" >
+    <ContentPage.Resources>
+        <local:CustomSelectionController x:Key="CustomSelectionController" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <sfGrid:SfDataGrid x:Name="textGrid" 
+                               ItemsSource="{Binding OrdersInfo}" 
+                               SelectionController="{x:StaticResource CustomSelectionController}"
+                               ColumnSizer="Star" NavigationMode="Cell" 
+                               SelectionMode="Single" AllowEditing="True">
+            </sfGrid:SfDataGrid>
+        </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>
